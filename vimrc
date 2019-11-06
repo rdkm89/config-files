@@ -95,8 +95,8 @@ let mapleader = ","
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 " Autoclose YCM preview window
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 set splitbelow
 
 " Fast saving
