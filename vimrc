@@ -58,6 +58,8 @@ Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'junegunn/goyo.vim'
 " Pydict
 Plugin 'rkulla/pydiction'
+" Rust
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,8 +97,8 @@ let mapleader = ","
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 " Autoclose YCM preview window
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 set splitbelow
 
 " Fast saving
@@ -105,6 +107,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error
 command W w !sudo tee % > /dev/null
+
+" Weird insertion error
+let g:AutoClosePreserveDotReg = 0
 
  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -358,7 +363,7 @@ endif
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell! spelllang=en_gb<cr>
 
 " Shortcuts using <leader>
 map <leader>sn ]s
@@ -393,6 +398,9 @@ set clipboard=unnamed
 
 " UTF-8 escape for NERDTree
 let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" Netrw explorer
+map <leader>e :Explore<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
