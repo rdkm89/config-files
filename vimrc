@@ -60,6 +60,11 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'rkulla/pydiction'
 " Rust
 Plugin 'rust-lang/rust.vim'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -454,3 +459,12 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+" Rust setup
+if executable('rls')
+        au User lsp_setup call lsp#register_server({
+                \ 'name': 'rls',
+                \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+                \ 'whitelist': ['rust'],
+                \ })
+endif

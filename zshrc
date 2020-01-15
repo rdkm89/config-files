@@ -75,9 +75,14 @@ alias em="emacsclient -nw"
 alias t1="tree -d -L 1"
 alias t2="tree -d -L 2"
 alias t3="tree -d -L 3"
-alias julia="/Applications/Julia-1.0.app/Contents/Resources/julia/bin/julia"
+alias julia="/Applications/Julia-1.2.app/Contents/Resources/julia/bin/julia"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias chrome='open -a "Google Chrome"'
+alias show="fzf --reverse --preview 'bat --color "always" {}' --preview-window=right:60%"
+
+
+export PATH="/usr/local/bin:$PATH"
+#export PATH="/usr/local/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
@@ -130,3 +135,5 @@ test -r ~/.iterm2_shell_integration.bash && . ~/.iterm2_shell_integration.bash
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`
 source ~/.iterm2_shell_integration.zsh
 source ~/.zsh-interactive-cd.plugin.zsh
+
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
